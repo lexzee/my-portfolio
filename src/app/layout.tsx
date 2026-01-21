@@ -10,20 +10,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lexzee",
+  metadataBase: new URL("https://lexzee.vercel.app"),
+
+  title: {
+    default: "Lexzee",
+    template: "%s | Lexzee",
+  },
   openGraph: {
     title: "Lexzee",
-    description: "Full-Stack Developer Portfolio",
-    images: [
-      {
-        url: "/favicon.png",
-      },
-    ],
+    description:
+      "Full Stack Developer specializing in scalable Web3 and React applications.",
+    url: "https://lexzee.vercel.app",
+    siteName: "Lexzee's Portfolio",
+    locale: "en-NG",
+    type: "website",
   },
-  description: "Full-Stack Developer Portfolio",
-  icons: {
-    icon: "/favicon.png",
-  },
+  description:
+    "Full Stack Developer specializing in scalable Web3 and React applications.",
 };
 
 export default function RootLayout({
