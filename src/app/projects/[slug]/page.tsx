@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { getProject, projects } from "@/lib/projects";
 import { ProjectGallery } from "@/components/project-gallery";
+import Image from "next/image";
 
 interface ProjectPageProps {
   //   params: {
@@ -71,6 +72,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {/* Header Section */}
         <div className="space-y-6">
           <div className="space-y-2">
+            {project.heroImage && (
+              <Image
+                src={project.heroImage}
+                alt={`${project.title} Hero Image`}
+                className="w-full h-auto rounded-lg"
+                width={1200}
+                height={600}
+                priority
+              />
+            )}
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
               {project.title}
             </h1>

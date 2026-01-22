@@ -6,7 +6,7 @@ export interface Project {
   tags: string[];
   link: string;
   github?: string;
-  heroImage?: string; // Placeholder for future images
+  heroImage?: string;
   problem: string;
   solution: string;
   features: string[];
@@ -17,12 +17,13 @@ export const projects: Project[] = [
   {
     slug: "corpersafe",
     title: "CorperSafe",
+    heroImage: "/images/corpersafe-1.png",
     description:
       "A real-time safety and tracking application designed specifically for NYSC members in Nigeria.",
     date: "November 2025",
     tags: ["React", "Node.js", "Geolocation API", "Real-time", "Supabase"],
     link: "https://corpersafe.vercel.app",
-    github: "https://github.com/yourusername/corpersafe",
+    github: "https://github.com/lexzee/corper-safe",
     problem:
       "NYSC members deployed to unfamiliar regions in Nigeria often face security challenges and lack a reliable, centralized way to alert authorities or kin during emergencies. Existing solutions lack real-time geolocation context specific to the NYSC service zones.",
     solution:
@@ -33,42 +34,53 @@ export const projects: Project[] = [
       "Dead Zone detection using Machine Learning",
       "Offline mode for low-connectivity areas",
     ],
-    gallery: [],
+    gallery: [
+      "/images/corpersafe-1.png",
+      "/images/corpersafe-2.png",
+      "/images/corpersafe-3.png",
+      "/images/corpersafe-4.png",
+      "/images/corpersafe-5.png",
+    ],
   },
   {
     slug: "store-jupiter",
     title: "Store Jupiter",
+    heroImage: "/images/storejupiter-1.png",
     description:
-      "A production ready e-commerce starter. With integrated Paystack and Whatsapp Checkout, and an Admin Dashboard with audit logs and email receipts.",
+      "A production-ready e-commerce starter. Features atomic inventory management, integrated Paystack and WhatsApp checkout, and a comprehensive Admin Dashboard with audit logs.",
     date: "January 2026",
-    tags: ["Next.js", "Supabase", "Shadcn UI", "Gemini API", "Paystack"],
+    tags: ["Next.js 16", "Supabase", "Tailwind v4", "Shadcn UI", "PostgreSQL"],
     link: "https://etemp-storefront.vercel.app",
-    github: "https://github.com/yourusername/crypto-tax",
+    github: "https://github.com/lexzee/ecommerce-template",
     problem:
-      "With new tax regulations in Nigeria, crypto traders struggle to calculate liabilities accurately across multiple exchanges. Most global tools don't account for specific local naira conversion rates or regulatory nuances.",
+      "Building robust e-commerce platforms requires handling complex state management and database concurrency issues. Developers often struggle with implementing race-condition-proof inventory systems and stitching together disparate services for authentication, payments, and transactional emails.",
     solution:
-      "This platform aggregates transaction history from multiple exchanges (via CSV or API). It normalizes the data into a unified SQL schema using Prisma and uses the Gemini API to classify complex DeFi transactions automatically. It generates compliant PDF tax reports instantly.",
+      "This monorepo template solves these infrastructure challenges out of the box. It utilizes Supabase RPC functions for atomic stock deduction to prevent overselling and includes a fully typed Next.js frontend. It integrates local payment gateways (Paystack) and communication channels (WhatsApp) specifically tailored for the Nigerian market.",
     features: [
-      "Automated CSV parsing for Binance and Bybit",
-      "Real-time NGN/USD rate fetching",
-      "AI-powered transaction classification (Gemini API)",
-      "PDF Report Generation",
+      "Atomic stock management via Postgres functions",
+      "Integrated Paystack & WhatsApp Checkout",
+      "Admin Dashboard with order lifecycle management",
+      "Automated Email Receipts via Nodemailer",
+      "Dynamic 'Type-to-filter' location selection",
     ],
     gallery: [
-      "https://placehold.co/1920x1080/1e293b/FFF?text=Dashboard+View",
-      "https://placehold.co/1920x1080/1e293b/FFF?text=Mobile+View",
-      "https://placehold.co/1920x1080/1e293b/FFF?text=Settings+Page",
+      "/images/storejupiter-1.png",
+      "/images/storejupiter-2.png",
+      "/images/storejupiter-3.png",
+      "/images/storejupiter-4.png",
+      "/images/storejupiter-5.png",
     ],
   },
   {
     slug: "the-last-second",
     title: "The Last Second",
+    heroImage: "/images/lastsecond-3.png",
     description:
       "A high-stakes arcade game built on Solana where players compete for the pot in real-time.",
     date: "December 2025",
     tags: ["Solana", "Rust", "Anchor", "Phaser.js", "Web3"],
     link: "https://last-second.vercel.app",
-    github: "https://github.com/yourusername/the-last-second",
+    github: "https://github.com/lexzee/last-second",
     problem:
       "Blockchain games often suffer from high latency and poor user experience, making them feel clunky compared to traditional web games. We needed a way to handle high-frequency interactions without waiting for block confirmations for every move.",
     solution:
@@ -77,9 +89,13 @@ export const projects: Project[] = [
       "On-chain pot management using Solana Program Library",
       "Zero-latency gameplay via client-side prediction",
       "Phantom Wallet integration",
-      "Live leaderboard synced with blockchain state",
+      // "Live leaderboard synced with blockchain state",
     ],
-    gallery: [],
+    gallery: [
+      "/images/lastsecond-1.png",
+      "/images/lastsecond-2.png",
+      "/images/lastsecond-3.png",
+    ],
   },
 ];
 

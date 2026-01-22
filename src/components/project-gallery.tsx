@@ -47,10 +47,12 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
                   <DialogTrigger asChild>
                     <Card className="cursor-pointer hover:opacity-90 transition-opacity overflow-hidden">
                       <CardContent className="flex aspect-video items-center justify-center p-0 relative">
-                        <img
+                        <Image
                           src={image}
+                          fill
                           alt={`${title} screenshot ${index + 1}`}
-                          className="object-cover w-full h-full"
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </CardContent>
                     </Card>
@@ -58,16 +60,19 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
 
                   {/* Full Screen View */}
                   <DialogContent
-                    className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none"
+                    className="max-w-full p-0 overflow-hidden bg-transparent border-none shadow-none"
                     aria-describedby={`${title} - Image ${index + 1}`}
                   >
                     <DialogTitle className="sr-only">
                       {title} - Image {index + 1}
                     </DialogTitle>
-                    <img
+                    <Image
                       src={image}
                       alt={`${title} full view`}
+                      width={1920}
+                      height={1080}
                       className="w-full h-auto rounded-lg"
+                      priority
                     />
                   </DialogContent>
                 </Dialog>

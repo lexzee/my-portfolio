@@ -82,14 +82,19 @@ export function Hero() {
                 View My Work <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 px-8 text-base"
-              disabled
+            <Link
+              href={
+                "https://docs.google.com/document/d/1c2jXHh8xpbwf10RIdTPRXcjEwrywIyWX1VhyS93kJd4/edit?usp=drive_link"
+              }
             >
-              <Download className="mr-2 h-4 w-4" /> Download CV
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 px-8 text-base"
+              >
+                <Download className="mr-2 h-4 w-4" /> Download CV
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Social / Tech Proof */}
