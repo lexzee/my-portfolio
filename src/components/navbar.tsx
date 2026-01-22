@@ -13,7 +13,7 @@ import {
 
 export function Navbar() {
   const navLinks = [
-    { name: "Projects", href: "/#projects" },
+    { name: "Projects", href: "/projects" },
     { name: "Blog", href: "#" },
   ];
 

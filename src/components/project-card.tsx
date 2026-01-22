@@ -12,10 +12,11 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ProjectCardProps {
+  slug: string;
   title: string;
   description: string;
   tags: string[];
@@ -25,6 +26,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
+  slug,
   title,
   description,
   tags,
@@ -82,22 +84,44 @@ export function ProjectCard({
           </div>
         </CardContent>
 
-        <CardFooter className="flex gap-2 pt-4">
+        <CardFooter className="flex flex-col gap-2 pt-4 sm:flex-row">
           <Button
             asChild
-            className="flex-1 w-full gap-2 group-hover:bg-primary/90"
+            className="flex-1 w-full gap-2 sm:w-auto group-hover:bg-primary/90"
           >
-            <Link href={link} target="_blank">
-              Visit Live <ArrowUpRight className="h-4 w-4" />
+            <Link href={`/projects/${slug}`}>
+              Read Case Study <ArrowUpRight className="h-4 w-4" />
             </Link>
           </Button>
-          {github && (
-            <Button variant="outline" size="icon" asChild>
-              <Link href={github} target="_blank">
-                <Github className="h-4 w-4" />
+
+          <div className="flex w-full gap-2 sm:w-auto">
+            <Button
+              className="flex-1 sm:px-3"
+              variant={"outline"}
+              asChild
+              title="Visit Live Site"
+            >
+              <Link href={link} target="_blank">
+                <span className="sm:hidden">Visit Site</span>
+                <ExternalLink className="h-4 w-4 sm:ml-0" />
               </Link>
             </Button>
-          )}
+
+            {github && (
+              <Button
+                variant="outline"
+                size="icon"
+                className="flex-1 sm:px-3"
+                asChild
+                title="View Source"
+              >
+                <Link href={github} target="_blank">
+                  <span className="sm:hidden">Github</span>
+                  <Github className="h-4 w-4 sm:ml-0" />
+                </Link>
+              </Button>
+            )}
+          </div>
         </CardFooter>
       </Card>
     </motion.div>

@@ -2,34 +2,14 @@
 "use client";
 
 import { ProjectCard } from "@/components/project-card";
+import { getAllProjects } from "@/lib/projects";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-const projects = [
-  {
-    title: "CorperSafe",
-    description:
-      "A real-time safety and tracking application designed specifically for NYSC members, ensuring security during their service year.",
-    tags: ["React", "Geolocation API", "Node.js", "Real-time"],
-    link: "https://corpersafe.vercel.app",
-    github: "https://github.com",
-  },
-  {
-    title: "Store Jupiter",
-    description:
-      "A production ready e-commerce starter. With integrated Paystack and Whatsapp Checkout, and an Admin Dashboard with audit logs and email receipts.",
-    tags: ["Next.js", "Supabase", "Shadcn UI", "Paystack", "Gemini API"],
-    link: "https://etemp-storefront.vercel.app",
-    github: "https://github.com",
-  },
-  {
-    title: "The Last Second",
-    description:
-      "A Solana-based arcade game built for the Indie.fun Hackathon. Players compete in high-stakes, time-sensitive challenges on the blockchain.",
-    tags: ["Solana", "Web3", "Anchor", "Rust"],
-    link: "https://last-second.vercel.app",
-    github: "https://github.com",
-  },
-];
+const projects = getAllProjects().slice(0, 3);
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -74,6 +54,14 @@ export function FeaturedProjects() {
           <ProjectCard key={project.title} {...project} variants={item} />
         ))}
       </motion.div>
+
+      <div className="w-full items-center justify-center flex">
+        <Button asChild size={"lg"}>
+          <Link href="/projects">
+            View All Projects <ArrowUpRight className="ml-0" />
+          </Link>
+        </Button>
+      </div>
     </section>
   );
 }

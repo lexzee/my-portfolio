@@ -1,5 +1,5 @@
 import { ContactSection } from "@/components/contact-section";
-import { FeaturedProjects } from "@/components/featured-projetcs";
+import { FeaturedProjects } from "@/components/featured-projects";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
 import { TechStack } from "@/components/tech-stack";
