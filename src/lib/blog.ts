@@ -12,7 +12,8 @@ export type BlogPost = {
     publishedAt: string;
     summary: string;
     author?: string;
-    image?: string;
+    icon?: string;
+    hero?: string;
   };
   content: string;
 };

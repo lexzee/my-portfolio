@@ -8,11 +8,11 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Github,
-  Linkedin,
   Mail,
   Twitter,
   Send,
   Loader2Icon,
+  Instagram,
 } from "lucide-react";
 import { useForm, ValidationError } from "@formspree/react";
 
@@ -57,12 +57,12 @@ export function ContactSection() {
                 <span className="sr-only">Twitter / X</span>
               </Link>
             </Button>
-            {/* <Button variant="outline" size="icon" asChild>
-              <Link href="https://linkedin.com" target="_blank">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+            <Button variant="outline" size="icon" asChild>
+              <Link href="https://instagram.com/lordlexzee" target="_blank">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram / X</span>
               </Link>
-            </Button> */}
+            </Button>
           </div>
         </div>
 
@@ -72,44 +72,34 @@ export function ContactSection() {
             <form onSubmit={handleSubmit} method="POST" className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="first-name">First name</Label>
+                  <Label htmlFor="full-name">Full name</Label>
                   <Input
-                    id="first-name"
-                    name="first-name"
+                    id="full-name"
+                    name="full-name"
                     placeholder="John"
                     required
                   />
                   <ValidationError
-                    prefix="First name"
-                    field="first-name"
+                    prefix="Full name"
+                    field="full-name"
                     errors={state.errors}
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="last-name">Last name</Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input
-                    id="last-name"
-                    name="last-name"
-                    placeholder="Doe"
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
                     required
                   />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  required
-                />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                />
               </div>
 
               <div className="space-y-2">

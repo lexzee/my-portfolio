@@ -1,10 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { formatDate } from "@/lib/utils"; // You might need to add a simple date helper or use standard JS
 import { getBlogPosts } from "@/lib/blog";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { log } from "console";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Blog | Insights & Thoughts",
@@ -29,8 +27,25 @@ export default function BlogPage() {
       <div className="space-y-8">
         {posts.map((post) => (
           <div key={post.slug} className="group">
-            <Link href={`/blog/${post.slug}`}>
-              <article className="flex flex-col space-y-2 p-4 -mx-4 rounded-xl transition-colors hover:bg-muted/50">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="grid grid-cols-4 gap-4 items-center justify-between rounded-xl transition-colors hover:bg-muted/50 p-4 -mx-4"
+            >
+              <div className="relative overflow-clip rounded-2xl aspect-square">
+                {post.metadata.icon || post.metadata.hero ? (
+                  <Image
+                    src={post.metadata.icon! || post.metadata.hero!}
+                    alt={post.metadata.title + "image"}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-accent-foreground text-muted-foreground flex items-center justify-center">
+                    <p>No Image</p>
+                  </div>
+                )}
+              </div>
+              <article className="col-span-3 flex flex-col space-y-2">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <time dateTime={post.metadata.publishedAt}>
                     {new Date(post.metadata.publishedAt).toLocaleDateString()}

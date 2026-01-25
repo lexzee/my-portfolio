@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Terminal } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Instagram,
+  Terminal,
+} from "lucide-react";
 
 export function Hero() {
   // Animation variants for staggered entrance
@@ -109,13 +115,13 @@ export function Hero() {
             >
               <Github className="h-6 w-6" />
             </Link>
-            {/* <Link
-              href="https://linkedin.com"
+            <Link
+              href="https://instagram.com/lordlexzee"
               target="_blank"
               className="hover:text-foreground transition-colors"
             >
-              <Linkedin className="h-6 w-6" />
-            </Link> */}
+              <Instagram className="h-6 w-6" />
+            </Link>
             <Link
               href="https://x.com/devlexzee"
               target="_blank"

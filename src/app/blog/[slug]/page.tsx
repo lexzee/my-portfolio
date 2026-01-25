@@ -9,6 +9,7 @@ import { ArrowLeft, Calendar, User } from "lucide-react";
 import { components } from "@/components/mdx-components";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
+import Image from "next/image";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -68,6 +69,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Back to Blog
             </Link>
           </Button>
+
+          {post.metadata.hero && (
+            <div className="relative w-full h-96 rounded-xl overflow-clip">
+              <Image
+                src={post.metadata.hero}
+                alt="post hero image"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+          )}
 
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
             {post.metadata.title}

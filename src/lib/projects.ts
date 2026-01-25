@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     slug: "corpersafe",
     title: "CorperSafe",
-    heroImage: "/images/corpersafe-1.png",
+    heroImage: "/projects/corpersafe-1.png",
     description:
       "A real-time safety and tracking application designed specifically for NYSC members in Nigeria.",
     date: "November 2025",
@@ -35,17 +35,17 @@ export const projects: Project[] = [
       "Offline mode for low-connectivity areas",
     ],
     gallery: [
-      "/images/corpersafe-1.png",
-      "/images/corpersafe-2.png",
-      "/images/corpersafe-3.png",
-      "/images/corpersafe-4.png",
-      "/images/corpersafe-5.png",
+      "/projects/corpersafe-1.png",
+      "/projects/corpersafe-2.png",
+      "/projects/corpersafe-3.png",
+      "/projects/corpersafe-4.png",
+      "/projects/corpersafe-5.png",
     ],
   },
   {
     slug: "store-jupiter",
     title: "Store Jupiter",
-    heroImage: "/images/storejupiter-1.png",
+    heroImage: "/projects/storejupiter-1.png",
     description:
       "A production-ready e-commerce starter. Features atomic inventory management, integrated Paystack and WhatsApp checkout, and a comprehensive Admin Dashboard with audit logs.",
     date: "January 2026",
@@ -64,17 +64,17 @@ export const projects: Project[] = [
       "Dynamic 'Type-to-filter' location selection",
     ],
     gallery: [
-      "/images/storejupiter-1.png",
-      "/images/storejupiter-2.png",
-      "/images/storejupiter-3.png",
-      "/images/storejupiter-4.png",
-      "/images/storejupiter-5.png",
+      "/projects/storejupiter-1.png",
+      "/projects/storejupiter-2.png",
+      "/projects/storejupiter-3.png",
+      "/projects/storejupiter-4.png",
+      "/projects/storejupiter-5.png",
     ],
   },
   {
     slug: "the-last-second",
     title: "The Last Second",
-    heroImage: "/images/lastsecond-3.png",
+    heroImage: "/projects/lastsecond-3.png",
     description:
       "A high-stakes arcade game built on Solana where players compete for the pot in real-time.",
     date: "December 2025",
@@ -92,9 +92,9 @@ export const projects: Project[] = [
       // "Live leaderboard synced with blockchain state",
     ],
     gallery: [
-      "/images/lastsecond-1.png",
-      "/images/lastsecond-2.png",
-      "/images/lastsecond-3.png",
+      "/projects/lastsecond-1.png",
+      "/projects/lastsecond-2.png",
+      "/projects/lastsecond-3.png",
     ],
   },
 ];
