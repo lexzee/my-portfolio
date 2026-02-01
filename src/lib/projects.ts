@@ -36,10 +36,11 @@ export const projects: Project[] = [
     ],
     gallery: [
       "/projects/corpersafe-1.png",
-      "/projects/corpersafe-2.png",
+      // "/projects/corpersafe-2.png",
       "/projects/corpersafe-3.png",
       "/projects/corpersafe-4.png",
       "/projects/corpersafe-5.png",
+      "/projects/corpersafe-6.png",
     ],
   },
   {
